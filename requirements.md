@@ -12,14 +12,14 @@
 
 #### Property
 
-  + **property_id**: Primary Key, UUID, Indexed
-  + **host_id**: Foreign Key, references User(user_id)
-  + **name**: VARCHAR, NOT NULL
-  + **description**: TEXT, NOT NULL
-  + **location**: VARCHAR, NOT NULL
-  + **pricepernight**: DECIMAL, NOT NULL
-  + **created_at**: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
-  + **updated_at**: TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP
++ **property_id**: Primary Key, UUID, Indexed
++ **host_id**: Foreign Key, references User(user_id)
++ **name**: VARCHAR, NOT NULL
++ **description**: TEXT, NOT NULL
++ **location**: VARCHAR, NOT NULL
++ **pricepernight**: DECIMAL, NOT NULL
++ **created_at**: TIMESTAMP, DEFAULT CURRENT_TIMESTAMP
++ **updated_at**: TIMESTAMP, ON UPDATE CURRENT_TIMESTAMP
 
 #### Booking
 
