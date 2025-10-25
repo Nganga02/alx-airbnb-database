@@ -75,4 +75,4 @@
 
 ### Booking
 #####   One to one
-- Payment
+- (Optional) Payment
