@@ -19,7 +19,7 @@ FROM bookings JOIN users ON bookings.user_id = users.user_id;
 --===============
 --LEFT JOIN 
 --===============
-SELECT * FROM properties LEFT JOIN reviews ON properties.property_id = reviews.property_id;
+SELECT * FROM properties LEFT JOIN reviews ON properties.property_id = reviews.property_id ORDER BY property_id;
 
 
 --===============
