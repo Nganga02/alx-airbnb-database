@@ -19,7 +19,9 @@ VALUES
 -- PROPERTIES
 -- ===========
 
-INSERT INTO properties (property_id, host_id, title, description, location, price_per_night, max_guests, created_at)
+INSERT INTO properties (host_id, title, description, location, price_per_night, max_guests, created_at)
+SELECT user_id AS host_id, lastname || 'property' as title, 'A quiet, fully furnished studio perfect for students and young professionals.', 'Nairobi, Kilimani', 3200, 2, NOW() FROM users WHERE role = 'host'
+
 VALUES
 ('p1', 'u1', 'Cozy Studio Apartment', 'A quiet, fully furnished studio perfect for students and young professionals.', 'Nairobi, Kilimani', 3200, 2, NOW()),
 ('p2', 'u1', 'Luxury 2BR Apartment', 'Modern apartment with WiFi, balcony, and parking.', 'Nairobi, Kileleshwa', 7500, 4, NOW()),
