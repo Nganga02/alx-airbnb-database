@@ -2,7 +2,7 @@
 --IDENTIFYING PROPERTIES WITH A RATING > 4.0
 --===========================================
 
-SELECT * FROM properties WHERE property_id IN (SELECT DISTINCT property_id FROM reviews WHERE reviews.rating > 4.0);
+SELECT * FROM properties WHERE property_id IN (SELECT property_id FROM reviews WHERE reviews.rating > 4.0);
 
 --===========================================
 --IDENTIFYING USERS WITH MORE THAN 3 BOOKINGS
