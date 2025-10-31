@@ -22,3 +22,20 @@ CREATE INDEX idx_reviews_property_id ON reviews(property_id);
 -- Indexes for faster message retrieval involving users
 CREATE INDEX idx_messages_sender_id ON messages(sender_id);
 CREATE INDEX idx_messages_recipient_id ON messages(recipient_id);
+
+
+--Checks for querying the performance of the database query
+EXPLAIN ANALYZE WITH more_than_3 AS (
+    SELECT user_id, COUNT(*) AS booking_count
+    FROM bookings
+    GROUP BY user_id
+    HAVING COUNT(*) >= 3
+)
+SELECT 
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    u.email,
+    m.booking_count
+FROM users AS u
+JOIN more_than_3 AS m ON u.user_id = m.user_id;
