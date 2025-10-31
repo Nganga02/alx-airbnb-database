@@ -19,8 +19,6 @@ CREATE TABLE users (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Additional Index for faster email lookup
-CREATE INDEX idx_users_email ON users(email);
 
 
 -- ===========================
@@ -56,9 +54,6 @@ CREATE TABLE bookings (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Indexes for speeding up queries by property and user
-CREATE INDEX idx_bookings_property_id ON bookings(property_id);
-CREATE INDEX idx_bookings_user_id ON bookings(user_id);
 
 
 -- ===========================
@@ -72,8 +67,7 @@ CREATE TABLE payments (
     payment_method payment_method_type NOT NULL
 );
 
--- Index for faster booking-to-payment lookup
-CREATE INDEX idx_payments_booking_id ON payments(booking_id);
+
 
 
 -- ===========================
@@ -88,8 +82,7 @@ CREATE TABLE reviews (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Index for faster review retrieval by property
-CREATE INDEX idx_reviews_property_id ON reviews(property_id);
+
 
 
 -- ===========================
@@ -103,6 +96,3 @@ CREATE TABLE messages (
     sent_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Indexes for faster message retrieval involving users
-CREATE INDEX idx_messages_sender_id ON messages(sender_id);
-CREATE INDEX idx_messages_recipient_id ON messages(recipient_id);
